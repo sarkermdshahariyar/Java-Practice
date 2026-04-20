@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		sc.nextLine();
+		String digit = "0123456789";
+		String[] word = new String[num];
+		for(int i = 0; i < num; i++){
+		    word[i] = sc.nextLine();
+		}
+	    for(int i = 0; i < word.length; i++){
+	        String check = word[i];
+	        int count = 0;
+	        for(int j =0; j < check.length(); j++){
+	            if(digit.contains("" + check.charAt(j))){
+	                count++;
+	            }
+	        }
+	        System.out.println(word[i] + count);
+	    }
+	}
+}
