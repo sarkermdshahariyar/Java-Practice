@@ -1,0 +1,156 @@
+// Assignment 2 Question 1
+import java.util.Scanner;
+public class Task1{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("GIVE ME A NUMBER: ");
+    int x = scanner.nextInt();
+    if(x % 5 == 0 && x % 7 == 0){
+      System.out.println("INVALID, Divisible by both");
+    }
+    else if(x % 5 ==0){
+      System.out.println("DIVISIBLE BY 5");
+    }
+    else if(x % 7 ==0){
+      System.out.println("DIVISIBLE BY 7");
+    }
+    else{
+      System.out.println("NO");
+    }
+  
+  }
+}
+
+
+
+// Assignment 2 Question 2
+import java.util.Scanner;
+public class Task2{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("GIVE ME THE AMOUNT OF ENERGY YOU USED: ");
+    int amount = scanner.nextInt();
+    System.out.println("GIVE ME YOUR AGE: ");
+    int age = scanner.nextInt();
+    double total = 0;
+    if(age < 18 && amount < 100){
+      total = amount * 15 * 0.8; 
+    }
+    else if(age >= 18 && age <= 60 && amount < 100){
+      total = amount*15;
+    }
+    else if(age > 60 && amount < 100){
+      total = amount *15 * 0.9;
+    }
+    else if(age > 60 && amount > 100){
+      total = amount *15 * 0.9 * 1.05;
+    }
+    else if(age < 18 && amount > 100){
+      total = amount * 15 * 0.8 * 1.05;
+    }
+    else if(age >= 18 && age <= 60&& amount > 100){
+      total = amount * 15 * 0.8 * 1.05;
+    }
+    System.out.print("Final Bill: " + total);
+  }
+}
+
+
+
+// Assignment 2 Question 3
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("GIVE ME Three NUMBER: ");
+    double x = scanner.nextDouble();
+    double y = scanner.nextDouble();
+    double z = scanner.nextDouble();
+    if(x > y && x > z){
+      System.out.print("Maximum: "+ x);
+    }
+    else if(y > x && y >z){
+      System.out.print("Maximum: " +y);
+    }
+    else if(z > x && z > y){
+      System.out.print("Maximum: "+z);
+    }
+    if(z < x && z < y){
+      System.out.print("Minimum: "+z);
+    }
+    else if(x < z && x < y){
+      System.out.print("Minimum: "+x);
+    }
+    else if(y < z && y < x){
+      System.out.print("Minimum: "+y);
+    }
+  }
+}
+
+
+// Assignment 2 Question 4
+import java.util.Scanner;
+public class Task4{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("GIVE ME Three NUMBER: ");
+    double x = scanner.nextDouble();
+    double y = scanner.nextDouble();
+    double z = scanner.nextDouble();
+    if(x == y && x == z){
+      System.out.println("This is a Equilateral triangle");
+    }
+    else if(x == y || x == z){
+      System.out.println("This is a Isosceles triangle");
+    }
+    else if(x !=y   && x!= z){
+      System.out.println("This is a Scalene triangle");
+    }
+  }
+}
+
+
+
+// Assignment 2 Question 5
+import java.util.Scanner;
+public class Task5{
+  public static void main(String[] args){
+  Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter the amount the customer need to pay(Taka): ");
+    int x = scanner.nextInt();
+    System.out.println("Enter the amount, customer gave(Taka) ");
+    int y = scanner.nextInt();
+    int change = 0;
+    if(y >= x){
+      change = y - x;
+      System.out.println("The returned amount is taka: " + change);
+    }
+    else if(y < x){
+      change = x - y;
+      System.out.println("Please pay more taka: " + change);
+    }
+  }
+}
+
+
+
+// Assignment 2 Question 6
+import java.util.Scanner;
+public class Task6{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("INPUT THREE NUMBER: ");
+    int x = scanner.nextInt();
+    int y = scanner.nextInt();
+    int z = scanner.nextInt();
+    if(x == y && x == z){
+      System.out.println("All numbers are equal");
+    }
+    else if(x != y && x != z){
+      System.out.println("All numbers are different");
+    }
+    else if(x == z || x == y || x !=z || x != y){
+      System.out.println("Neither all are equal nor different");
+    }
+  }
+}

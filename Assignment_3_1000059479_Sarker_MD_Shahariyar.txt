@@ -1,0 +1,211 @@
+//Assignment 3
+import java.util.Scanner;
+  public class A3Q1{
+    public static void main(String[] args){
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("Give me an Integer: ");
+      int n = scanner.nextInt();
+      int i = 1;
+      while(i <= n){
+        if( i%5 ==0 && i%3 !=0){
+        System.out.println(i);
+        }
+        i+=1;
+      }
+    }
+  }
+
+
+//Assigment 3 Q2
+  import java.util.Scanner;
+  public class A3Q2{
+    public static void main(String[] args){
+      Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter number of Herbs (H): ");
+        int h = scanner.nextInt();
+        System.out.println("Please Enter number of Crystals (C): ");
+        int c = scanner.nextInt();
+        int i = 0;
+        while(h >=3 && c >=2){
+            System.out.println("Potion created: ");
+            h = h-3;
+            c = c-2;
+            i = i+1;
+            System.out.print("Remaining Herbs: " + h + "Remaining Crystals: " + c + "\n");
+        }
+        System.out.print("Potion created " + i);
+    }
+}
+
+
+
+
+
+
+
+
+//A3Q3
+import java.util.Scanner;
+  public class A3Q3{
+    public static void main(String[] args){
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("Energy (E): ");
+      int E = scanner.nextInt();
+      System.out.println("Number of River (N) ");
+      int N = scanner.nextInt();
+      int i = 1;
+      while(i <= N && E >0){
+        System.out.println("Enter River Distance: ");
+        int d = scanner.nextInt();
+        if( d < 5){
+          E = E -2;
+        }
+        else if(d > 5){
+          E = E - (d/2);
+        }
+        if(E<=0){
+          System.out.print("Tired at River: " + i);
+        }
+        i+=1;
+      }
+      System.out.print("All Done " + E + " Energy left");
+    }
+  }
+
+
+//A3Q4
+import java.util.Scanner;
+public class A3Q3{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please give an intger: ");
+        int k = scanner.nextInt();
+        int i = 1;
+
+        while(true){
+            int right = k % 10;
+            System.out.println(right);
+            k = k / 10;
+            if(k <= 0){
+                break;
+            }
+
+        }
+    }
+}
+
+
+//A3Q5
+public class A3Q5{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Secret Code: ");
+        int k = scanner.nextInt();
+        int N = 0;
+        int duplicate = k;
+        while(duplicate > 0){
+            duplicate = duplicate / 10;
+            N++;
+        }
+        int i = 1;
+        int divider = 1;
+        while(i < N){
+            divider = divider * 10;
+            i++;
+        }
+        while(divider > 0){
+            int left = k /divider;
+            System.out.println(left);
+            k = k % divider;
+            divider = divider / 10;
+
+        }
+    }
+}
+
+
+A3Q6
+// 
+import java.util.Scanner;
+public class A3Q6{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int i = 1;
+        int c = 0;
+        System.out.print("Enter an integer: ");
+        int k = scanner.nextInt();
+        while (i <= k) {
+            if (k % i == 0) {
+                c += 1;
+            }
+
+            i += 1;
+        }
+        if (c == 2) {
+            System.out.print(k + " is a prime number\n");
+        } else if (c > 2) {
+            System.out.print(k + " is not a prime number\n");
+        }
+        int sum = 0;
+        int j = 1;
+        while(j <= k){
+            if (k % j == 0) {
+                sum = sum + j;
+            }
+            j++;
+        }
+        int perfect = sum - k;
+        if(perfect == k){
+            System.out.print(k + " is a perfect number");
+        }
+        else{
+            System.out.print(k + " is a not perfect number");
+        }
+    }
+}
+
+
+
+//A3Q7
+  import java.util.Scanner;
+  public class A3Q7{
+    public static void main(String[] args){
+      Scanner scanner = new Scanner(System.in);
+      int i = 0;
+      int sum =0;
+      while(i < 600){
+        if(i %7 == 0 && i %9 ==0){
+        }
+        else if(i %7 == 0 || i %9 ==0){
+          sum = sum + i;
+        }
+        i+=1;
+      }
+      System.out.print(sum);
+    }
+  }
+
+//A3Q8
+import java.util.Scanner;
+public class A3Q8{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    int i = 0;
+    int pos =0;
+    int neg = 0;
+    while(true){
+      System.out.print("Enter an integer: ");
+      int k = scanner.nextInt();
+      if(k >= 0){
+        pos +=1;
+      }
+      else{
+        neg +=1;
+      }
+      i+=1;
+      System.out.print(pos +" Non-negative Numbers\n");
+      System.out.print(neg +" negative Numbers\n");
+    }
+    
+  }
+}

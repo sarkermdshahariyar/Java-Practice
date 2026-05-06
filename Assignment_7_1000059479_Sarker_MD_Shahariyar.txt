@@ -1,0 +1,180 @@
+//A7Q1
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("N: ");
+		int size = sc.nextInt();
+		int[] array = new int[size];
+		int[] narray = new int[size];
+		for(int i =0; i <array.length; i++){
+		    array[i] = sc.nextInt();
+		}
+		for(int i =0; i < array.length; i++){
+		    if(array[i] > 0){
+		        narray[i] = 1;
+		    }
+		    else if(array[i] < 0 || array[i] == 0){
+		        narray[i] = 0;
+		    }
+		    System.out.print(array[i]);
+		}
+		System.out.println();
+		for(int i =0; i < array.length; i++){
+		    System.out.print(narray[i]);
+		}
+		
+	}
+}
+
+
+//A7Q2
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("N: ");
+		int size = sc.nextInt();
+		int[] array = new int[size];
+		for(int i =0; i <array.length; i++){
+		    System.out.print("Enter a Number: ");
+		    array[i] = sc.nextInt();
+		}
+		System.out.print("Target: ");
+		int Target = sc.nextInt();
+		int index = -1;
+		for(int i =0; i < array.length; i++){
+		    if(array[i] == Target){
+		     index = i;
+		    }
+		}
+		if(index == -1){
+		    System.out.print(Target + "Element Not Found");
+		}
+		else{
+		    System.out.print(Target + "is at index" + index);
+		    }
+	}
+}
+
+//A7Q3
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("N: ");
+		int size = sc.nextInt();
+		double[] array = new double[size];
+		double max =array[0];
+		double min = array[0];
+		double avg =0;
+		double sum =0;
+		for(int i =0; i <array.length; i++){
+		    System.out.print("Enter a Number: ");
+		    array[i] = sc.nextDouble();
+		}
+		for(int i =0; i < array.length; i++){
+		    sum += array[i];
+		}
+		int maxi = 0;
+		int mini = 0;
+		for(int i = 0; i < array.length - 1; i++){
+		    if(array[i] > max){
+		        max = array[i];
+		        maxi = i;
+		    }
+		    else if(array[i] < min){
+		        min = array[i];
+		        mini = i;
+		    }
+		}
+		avg = sum / (double)array.length;
+	    System.out.println(max + "is at index " + maxi);
+	    System.out.println(min+ "is at index " + mini);
+	    System.out.println(avg);
+	}
+}
+
+//A7Q4
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("N: ");
+		int size = sc.nextInt();
+		int[] array1 = new int[size];
+		for(int i =0; i <array1.length; i++){
+		    System.out.print("Enter element in arr1: ");
+		    array1[i] = sc.nextInt();
+		}
+		System.out.print("N2: ");
+		int size2 = sc.nextInt();
+		int[] array2 = new int[size2];
+		for(int i =0; i <array2.length; i++){
+		    System.out.print("Enter element in arr2: ");
+		    array2[i] = sc.nextInt();
+		}
+		int target = -1;
+		for(int i =0; i <array2.length; i++){
+		    for(int j = 0; j <array1.length; j++){
+		        if(array2[i] == array1[j]){
+		            target++;
+		        }
+		    }
+		    
+		}
+		if(target == array2.length - 1){
+		    System.out.print("Array2 is a subset of Array1");
+		}
+		else{
+		    System.out.print("Array2 is not a subset of Array1");
+		}
+	}
+}
+
+//A7Q5
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("N: ");
+		int size = sc.nextInt();
+		int[] array1 = new int[size];
+		for(int i =0; i <array1.length; i++){
+		    System.out.print("Enter marks: ");
+		    array1[i] = sc.nextInt();
+		    sc.nextLine();
+		}
+		String[] array2 = new String[size];
+		for(int i =0; i <array2.length; i++){
+		    System.out.print("Enter student: ");
+		    array2[i] = sc.nextLine();
+		}
+		for(int j = 0; j < array1.length; j++){
+		    int minI = j;
+		    for(int i = j+1; i < array1.length; i++){
+	        if(array1[i] < array1[minI]){
+	            minI = i;
+	           }
+	    }
+	        int temp = array1[minI];
+	        array1[minI] = array1[j];
+	        array1[j] = temp;
+	        String studentTemp = array2[minI];
+	        array2[minI] = array2[j];
+	        array2[j] = studentTemp;
+	    }
+	    for(int i = 0; i < array1.length; i++){
+	        System.out.print(array1[i] + " ");
+	    }
+	    System.out.println();
+	    for(int i = 0; i < array2.length; i++){
+	        System.out.print(array2[i] + " ");
+	    }
+	}
+}

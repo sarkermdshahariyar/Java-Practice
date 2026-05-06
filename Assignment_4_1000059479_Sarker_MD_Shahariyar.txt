@@ -1,0 +1,135 @@
+
+//A4Q1
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a starting number: ");
+        int start = scanner.nextInt();
+        System.out.println("Enter a ending number: ");
+        int end = scanner.nextInt();
+        for(int i = start; i<= end; i++ ){
+            int count = 0;
+            int temp = i;
+            int TEMP = i;
+            int check = i;
+            double sum = 0;
+            while(temp >0){
+                temp = temp /10;
+                count++;
+            }
+            while(TEMP > 0){
+                sum = sum + Math.pow(TEMP%10,count);
+                TEMP = TEMP/10;
+            }
+            if(sum == check){
+                System.out.println("Since the sum equals the original number, " + check +" is an Armstrong number.");
+            }
+        }
+    }
+}
+
+//A4Q2
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of students to check: ");
+        int k = scanner.nextInt();
+        int i = 0;
+
+        while(i < k){
+            System.out.println("Enter student ID: ");
+            int ID = scanner.nextInt();
+            int j = 0;
+            boolean lucky = false;
+            while(j <= ID){
+                if(Math.pow(2,j) == ID){
+                    lucky = true;
+                    break;
+                }
+                j++;
+            }
+            if(lucky){
+                System.out.println("Lucky ID: ");
+            }
+            else{
+                System.out.println("Not lucky ID: ");
+            }
+
+            i++;
+        }
+    }
+}
+
+
+
+
+//A4Q3
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of days: ");
+        int k = scanner.nextInt();
+        for(int i =1; i <=k; i++){
+            double sum = 0;
+            System.out.println("Enter sales for Day "+ i +" ");
+            for(int j = 0; j < 3; j++ ){
+                int amount = scanner.nextInt();
+                sum = sum + amount;
+            }
+            double total = sum;
+            if(sum >= 100 && sum < 200){
+                total = sum * 1.02;
+            }
+            else if(sum >= 200 && sum < 500){
+                total = sum * 1.05;
+            } else if (sum >= 500) {
+                total = sum * 1.10;
+            }
+            System.out.printf("Total Sales with Tax: "+ total +"\n");
+
+
+        }
+    }
+}
+
+
+//A4Q4
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("How many members: ");
+        int mem = scanner.nextInt();
+        for(int i = 1; i <=mem; i++){
+            System.out.print("Number of exerise for Member " + i + ":" );
+            int num_exe = scanner.nextInt();
+            if(num_exe > 3){
+                System.out.print("Exerise can't be more the 3");
+                continue;
+            }
+            double sum =0 ;
+            for(int j =1; j <= num_exe; j++){
+                System.out.print("Exercise "+ j + ": ");
+                int count = scanner.nextInt();
+                if(count > 350){
+                    sum = sum + count * 1.5;
+                }
+                else if(count < 200){
+                    sum = sum + count * 0.9;
+                }
+                else{
+                    sum = sum + count;
+                }
+
+            }
+            double avg = sum /num_exe;
+            if(avg > 400){
+                avg = avg + 50;
+            }
+            System.out.print(avg);
+            System.out.println();
+        }
+    }
+}

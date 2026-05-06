@@ -1,0 +1,70 @@
+// Question 1
+import java.util.Scanner; 
+public class Task1{
+  public static void main(String[]args){
+    Scanner scanner = new Scanner(System.in);
+    int x = scanner.nextInt();
+    int y = x / 525600;
+    int z = x % 525600 / 1440;
+    System.out.println(y);
+    System.out.println(z);  
+  }
+}
+
+
+
+// Question 2
+import java.util.Scanner; 
+public class Task2{
+  public static void main(String[]args){
+    Scanner scanner = new Scanner(System.in);
+    int a = 2;
+    int b= 5;
+    int c = 8;
+    int d = ( 2*b *  (c-a)/3) + 7;
+    System.out.println(d);
+  }
+}
+
+
+
+// question 3
+import java.util.Scanner; 
+public class Task3{
+  public static void main(String[]args){
+    Scanner scanner = new Scanner(System.in);
+    int x = scanner.nextInt();
+    int y = x % 100 / 10 ;
+    int z = x % 100 % 10; 
+    System.out.println(z);
+    System.out.println(y);
+  }
+}
+
+
+
+
+// Question 4
+import java.util.Scanner; 
+public class Task4{
+  public static void main(String[]args){
+    Scanner scanner = new Scanner(System.in);
+    double x = scanner.nextInt();
+    double y = scanner.nextInt();
+    double z = Math.sqrt(x*x + y*y);
+    System.out.println(z);
+  }
+}
+
+
+
+// Question 5
+public class Task5{
+  public static void main(String[]args){
+    double a = 4.5;
+    double b = 9.5;
+    double c = Math.sqrt(a*a + b*b);
+    System.out.print(c);
+  }
+}
+

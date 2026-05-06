@@ -1,0 +1,182 @@
+//A6Q1
+import java.util.Scanner;
+public class Assigment_6 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        int max = 0;
+        for(int i =0; i < word.length() -1; i++){
+            char c1 = word.charAt(i);
+            int num =0;
+            char c2 = word.charAt(i+1);
+            if((c1 >= '0' && c1 <='9') &&(c2 >= '0' && c2 <='9')){
+                num = (c1-'0') *10 + (c2-'0');
+                if(num > max){
+                    max = num;
+                }
+            }
+
+        }
+        System.out.println("2-Digit PIN: " + max);
+    }
+}
+
+
+//A6Q2
+import java.util.Scanner;
+public class Assigment_6 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        int left =  0;
+        int right = word.length() -1;
+        while(left < right){
+            char leftchar = word.charAt(left);
+            char rigthchar = word.charAt(right);
+            boolean leftv = leftchar == 'a' || leftchar == 'e' || leftchar == 'i' || leftchar == 'o' ||leftchar == 'u' ||leftchar == 'A' ||
+                    leftchar == 'E' || leftchar == 'I' ||leftchar == 'O' || leftchar == 'U';
+            boolean rightv = rigthchar == 'a' || rigthchar == 'e' || rigthchar == 'i' || rigthchar == 'o' ||rigthchar == 'u' ||rigthchar == 'A' ||
+                    rigthchar == 'E' || rigthchar == 'I' ||rigthchar == 'O' || rigthchar == 'U';
+            if(!leftv){
+              left++;
+            }
+            else if(!rightv){
+                right--;
+            }
+            else {
+                String temp = "";
+                for(int i = 0; i < word.length(); i++){
+                    if (i == left) {
+                        temp += rigthchar;
+                    } else if (i == right) {
+                        temp += leftchar;
+                    } else {
+                        temp += word.charAt(i);
+                    }
+                }
+                word = temp;
+                left++;
+                right--;
+            }
+        }
+        System.out.println(word);
+    }
+}
+
+
+//A6Q3
+import java.util.Scanner;
+public class Assigment_6 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int maxword = 0;
+        int power = 0;
+        String longest = "";
+        while(true){
+            String word = sc.nextLine();
+            if(word.equals("stop")){
+                break;
+            }
+            String real = "";
+            for(int i =0; i < word.length(); i++){
+                char c = word.charAt(i);
+                if(c >= 'a' && c <='z'){
+                    real += (char)(c-32);
+                }
+                else if(c >= 'A' && c <='Z'){
+                    real += c;
+                }
+            }
+            if(real.length() > maxword){
+                maxword = real.length();
+                longest = real;
+            }
+            for(int i =0; i < longest.length(); i++){
+                power = power + longest.charAt(i);
+            }
+        }
+        System.out.println("Largest Spell : " + longest);
+        System.out.println("Power Level : " + power);
+    }
+}
+
+
+//A6Q4
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+
+        String lower = "";
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            if(c >= 'A' && c <= 'Z'){
+                c = (char)(c + 32);
+            }
+            lower += c;
+        }
+        int madrid = 0;
+        int bayern = 0;
+        boolean close = false;
+        boolean destroy = false;
+
+        String cleqn = "";
+
+        // Step 2: extract words
+        for(int i = 0; i <= lower.length(); i++){
+
+            if(i < lower.length() && lower.charAt(i) != ' ' && lower.charAt(i) != '.' && lower.charAt(i) != '!'){
+                word += lower.charAt(i);
+            } else {
+                if(word.equals("madrid")){
+                    madrid++;
+                }
+                else if(word.equals("bayern")){
+                    bayern++;
+                }
+                else if(word.equals("close")){
+                    close = true;
+                }
+                else if(word.equals("destroy")){
+                    destroy = true;
+                }
+                word = "";
+            }
+        }
+        if(madrid > bayern){
+            System.out.println("Madrid Supporter");
+        }
+        else if(bayern > madrid){
+            System.out.println("Bayern Supporter");
+        }
+        else{
+            System.out.println("Neutral");
+        }
+        if(close){
+            System.out.println("Fan expect a close match");
+        }
+        else if(destroy){
+            System.out.println("Fan expects a dominating victory!");
+        }
+        else{
+            System.out.println("Hard to read the fan sentiment");
+        }
+    }
+}
+
+//A6Q5
+import java.util.Scanner;
+public class Assigment_6 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        int count = 0;
+        int i = word.length() -1;
+        while(i>=0 && word.charAt(i) != ' '){
+            count++;
+            i--;
+        }
+        System.out.println(count);
+    }
+}

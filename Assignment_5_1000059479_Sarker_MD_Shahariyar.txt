@@ -1,0 +1,200 @@
+//A5Q1
+import java.util.Scanner;
+public class A5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for(int row = 1; row < 2 * num; row++) {
+            if(row > num){
+                for(int space= 0; space < num - (2* num - row); space++){
+                    System.out.print(" ");
+                }
+                for(int col = 1; col <= 2* num - row; col++){
+                    System.out.print(col);
+                }
+                for(int col = 2* num - row -1;  col >=1; col-- ){
+                    System.out.print(col);
+                }
+            }
+            else{
+                for(int space =0; space < num - row; space++){
+                    System.out.print(" ");
+                }
+                for(int col = 1; col <= 2 * row -1; col++){
+                    System.out.print(col);
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+//A5Q2
+import java.util.Scanner;
+public class A5Q2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for(int row = 1; row <= num; row++) {
+            for(int space=1; space <= num - row; space++){
+                System.out.print(" ");
+            }
+            for(int col = 1; col <= row;col++){
+                if(col == 1 || col == row || row == num){
+                    System.out.print(col);
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+//A5Q3
+import java.util.Scanner;
+public class A5Q3{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for(int row =1; row <=num; row++) {
+            for(int space =0; space < num - row; space++){
+                System.out.print(" ");
+            }
+            for(int col = 1; col <= 2 * row -1; col++){
+                if(col == 1|| col == 2 * row - 1 || row == num){
+                    System.out.print(col);
+                }
+                else{
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+//A5Q4
+import java.util.Scanner;
+public class A5Q4{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for (int row = 1; row < 2 * num; row++) {
+            if (row > num) {
+                for (int space = 0; space < num - (2 * num - row); space++) {
+                    System.out.print(" ");
+                }
+                for (int col = 1; col <= 2 * (2 * num - row) - 1; col++) {
+                    if (col == 1 || col == 2 * (2 * num - row) - 1 ) {
+                        System.out.print(col);
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+
+            }
+            else {
+                for (int space = 0; space < num - row; space++) {
+                    System.out.print(" ");
+                }
+                for (int col = 1; col <= 2 * row - 1; col++) {
+                    if (col == 1 || col == 2 * row - 1 ) {
+                        System.out.print(col);
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+//A5Q5 
+import java.util.Scanner;
+public class A5Q5{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for (int row = 1; row <= num; row++) {
+            for (int space = 0; space < num - row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                System.out.print(col);
+            }
+            for(int col = row -1; col >=1;col--){
+                System.out.print(col);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+//A5Q6
+import java.util.Scanner;
+public class A5Q6{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for (int row = num; row >= 1; row--) {
+            for (int space = 0; space < num - row; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                System.out.print(col);
+            }
+            for(int col = row -1; col >=1;col--){
+                System.out.print(col);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+//A5Q7
+import java.util.Scanner;
+public class A5Q7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Num: ");
+        int num = scanner.nextInt();
+        for (int row = 1; row <= num; row++) {
+            int count;
+            if (row <= (num / 2) + 1) {
+                count = num - 2 * (row - 1);
+            } else {
+                count = 1 + 2 * (row - ((num / 2) + 1));
+            }
+            for (int space = 0; space < (num - count) / 2; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= count; col++) {
+                System.out.print(col);
+            }
+            System.out.println();
+        }
+    }
+}
